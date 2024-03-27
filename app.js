@@ -57,16 +57,7 @@ app.get('/notification', async (req, res) => {
       res.status(500).json(err)
    }
 })
-app.get('/carss', async (req, res) => {
 
-   try {
-      const Cars = await CarsModel.find()
-      console.log(Car)
-      res.status(200).json(Cars)
-   } catch (err) {
-      res.status(500).json(err)
-   }
-})
 app.get('/cars', async (req, res) => {
    const { carsubtitle, price } = req.query
 
@@ -108,5 +99,5 @@ const connect = async () => {
 app.use(express.json())
 app.listen(port, () => {
    connect()
-   console.log(`Server is running on 123port ${port}`);
+   console.log(`Server is running on port ${port}`);
 });
